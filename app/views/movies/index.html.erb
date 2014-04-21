@@ -1,0 +1,36 @@
+<h1>Movie Database</h1>
+
+<% all_movies = Movie.read %>
+
+<hr>
+
+<h2>Movie Titles</h2>
+
+<ul>
+
+  <% all_movies.each do |movie| %>
+
+    <li><strong><%= movie.title %></strong> (2005), directed by Mickey Mouse.</li>
+
+  <% end %>
+
+</ul>
+
+<% all_movies.each do |movie| %>
+  <img src="http://ia.media-imdb.com/images/M/MV5BMTM2Njg2NjU5NF5BMl5BanBnXkFtZTYwODI5MDc4._V1_SY226_SX144_AL_.jpg", width: '120' %>
+<% end %>
+
+<h2>Quick Stats</h2>
+
+<ul>
+  <li>We have 4 movies and 16 directors in our database.</li>
+  <li>Steven Spieberg directed 8 of them.</li>
+  <li>6 movies were released in 2012.</li>
+  <li>The latest movie is <em>Raiders of the Lost Ark</em>.</li>
+  <li>The oldest movie is <em>Skyfall</em>.</li>
+</ul>
+
+<hr>
+
+<a href="http://www.imdb.com">Click here to go to imdb.com</a>.
+

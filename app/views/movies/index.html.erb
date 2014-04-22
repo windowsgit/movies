@@ -10,14 +10,16 @@
 
   <% all_movies.each do |movie| %>
 
-    <li><strong><%= movie.title %></strong> (2005), directed by Mickey Mouse.</li>
+    <% d = Director.read(movie["director_id"]) %>
+
+    <li><strong><%= movie["title"] %></strong> (<%= movie["year"] %>), directed by <%= d["name"] %>.</li>
 
   <% end %>
 
 </ul>
 
 <% all_movies.each do |movie| %>
-  <img src="http://ia.media-imdb.com/images/M/MV5BMTM2Njg2NjU5NF5BMl5BanBnXkFtZTYwODI5MDc4._V1_SY226_SX144_AL_.jpg", width: '120' %>
+  <img src="<%= movie["poster_url"] %>" width="120">
 <% end %>
 
 <h2>Quick Stats</h2>

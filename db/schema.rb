@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421153111) do
+ActiveRecord::Schema.define(version: 20140421233451) do
 
   create_table "directors", force: true do |t|
     t.string "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140421153111) do
     t.string  "title"
     t.integer "year"
     t.string  "poster_url"
+    t.integer "director_id"
   end
 
 end

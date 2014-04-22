@@ -6,10 +6,12 @@ jl = Director.create("name" => "John Lasseter", "photo_url" => "http://ia.media-
 sm = Director.create("name" => "Sam Mendes", "photo_url" => "http://ia.media-imdb.com/images/M/MV5BNTgzODMyMDUwNF5BMl5BanBnXkFtZTcwNzEyMjAyMg@@._V1_SX214_CR0,0,214,317_AL_.jpg")
 
 Movie.delete_all
-Movie.create("title" => "Apollo 13", "year" => 1995, "director_id" => rh.id, poster_url => "http://ia.media-imdb.com/images/M/MV5BMTM2Njg2NjU5NF5BMl5BanBnXkFtZTYwODI5MDc4._V1_SY226_SX144_AL_.jpg")
-Movie.create("title" => "Jurassic Park", "year" => 1993, "director_id" => ss.id, poster_url => "http://ia.media-imdb.com/images/M/MV5BMjQzODQyMzk2Nl5BMl5BanBnXkFtZTcwNTg4MjQ3OA@@._V1_SX214_AL_.jpg")
-Movie.create("title" => "Lincoln", "year" => 2012, "director_id" => ss.id, poster_url => "http://ia.media-imdb.com/images/M/MV5BMTQzNzczMDUyNV5BMl5BanBnXkFtZTcwNjM2ODEzOA@@._V1_SY317_CR0,0,214,317_AL_.jpg")
-Movie.create("title" => "Raiders of the Lost Ark", "year" => 2012, "director_id" => ss.id, poster_url => "http://ia.media-imdb.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_SX214_AL_.jpg")
-Movie.create("title" => "The Dark Knight", "year" => 2008, "director_id" => cn.id, poster_url => "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY317_CR0,0,214,317_AL_.jpg")
-Movie.create("title" => "Toy Story", "year" => 1995, "director_id" => jl.id, poster_url => "http://ia.media-imdb.com/images/M/MV5BMTgwMjI4MzU5N15BMl5BanBnXkFtZTcwMTMyNTk3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg")
-Movie.create("title" => "Skyfall", "year" => 2012, "director_id" => sm.id, poster_url => "http://ia.media-imdb.com/images/M/MV5BMjAyODkzNDgzMF5BMl5BanBnXkFtZTcwMDMxMDI4Nw@@._V1_SX214_AL_.jpg")
+Movie.create("title" => "Apollo 13", "year" => 1995, "director_id" => rh.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTM2Njg2NjU5NF5BMl5BanBnXkFtZTYwODI5MDc4._V1_SY226_SX144_AL_.jpg")
+Movie.create("title" => "Jurassic Park", "year" => 1993, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjQzODQyMzk2Nl5BMl5BanBnXkFtZTcwNTg4MjQ3OA@@._V1_SX214_AL_.jpg")
+Movie.create("title" => "Lincoln", "year" => 2012, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTQzNzczMDUyNV5BMl5BanBnXkFtZTcwNjM2ODEzOA@@._V1_SY317_CR0,0,214,317_AL_.jpg")
+Movie.create("title" => "Raiders of the Lost Ark", "year" => 2012, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_SX214_AL_.jpg")
+Movie.create("title" => "The Dark Knight", "year" => 2008, "director_id" => cn.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY317_CR0,0,214,317_AL_.jpg")
+Movie.create("title" => "Toy Story", "year" => 1995, "director_id" => jl.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTgwMjI4MzU5N15BMl5BanBnXkFtZTcwMTMyNTk3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg")
+Movie.create("title" => "Skyfall", "year" => 2012, "director_id" => sm.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjAyODkzNDgzMF5BMl5BanBnXkFtZTcwMDMxMDI4Nw@@._V1_SX214_AL_.jpg")
+
+puts "There are now #{Director.count} directors and #{Movie.count} movies."

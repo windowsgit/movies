@@ -1,0 +1,28 @@
+<h1>Movie Database</h1>
+
+<% director = Director.first %>
+
+<% movies = Movie.read %>
+
+<hr>
+
+<h2>Director: <%= director["name"] %></h2>
+
+<h4>Filmography</h4>
+
+<ul>
+
+  <% movies.each do |movie| %>
+
+    <li>
+      <strong><%= movie["title"] %></strong> (<%= movie["year"] %>).
+    </li>
+
+  <% end %>
+
+</ul>
+
+<% movies.each do |movie| %>
+  <img src="<%= movie["poster_url"] %>" width="120">
+<% end %>
+

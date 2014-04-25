@@ -25,11 +25,13 @@
 <h2>Quick Stats</h2>
 
 <ul>
-  <li>We have 4 movies and 16 directors in our database.</li>
-  <li>Steven Spieberg directed 8 of them.</li>
-  <li>6 movies were released in 2012.</li>
-  <li>The latest movie is <em>Raiders of the Lost Ark</em>.</li>
-  <li>The oldest movie is <em>Skyfall</em>.</li>
+  <li>We have <%= Movie.count %> movies and <%= Director.count %> directors in our database.</li>
+  <% the_director = Director.find_by("name" => "Ron Howard") %>
+  <li><%= the_director["name"] %> directed <%= Movie.where(:director_id => the_director["id"]).count %> of them.</li>
+  <li><%= Movie.where("year" => 2012).count %> movies were released in 2012.</li>
+
+  <li>The latest movie is <em><%= Movie.read.order("year desc").first["title"] %></em>.</li>
+  <li>The oldest movie is <em><%= Movie.read.order("year asc").first["title"] %></em>.</li>
 </ul>
 
 <hr>

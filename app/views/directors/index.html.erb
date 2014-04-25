@@ -1,0 +1,22 @@
+<h1>Movie Database</h1>
+
+<% all_directors = Director.read %>
+
+<hr>
+
+<h2>Directors</h2>
+
+<ul>
+
+  <% all_directors.each do |director| %>
+
+    <li><a href="/directors/show"><%= director["name"] %></a></li>
+
+  <% end %>
+
+</ul>
+
+<% all_directors.each do |director| %>
+  <img src="<%= director["photo_url"] %>" width="120">
+<% end %>
+

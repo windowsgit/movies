@@ -1,8 +1,10 @@
 <h1>Movie Database</h1>
 
-<% director = Director.first %>
+<% the_id = params["id"] %>
 
-<% movies = Movie.read %>
+<% director = Director.read(the_id) %>
+
+<% movies = Movie.read("director_id" => director["id"]) %>
 
 <hr>
 

@@ -8,6 +8,15 @@ Director:
   - name: string
   - photo_url: string
 
+Actor:
+  - name: string
+  - photo_url: string
+
+Role:
+  - movie_id: integer
+  - actor_id: integer
+  - character: string
+
 # Example table for a typical Book model.
 #
 # Book:

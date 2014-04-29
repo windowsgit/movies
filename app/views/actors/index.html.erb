@@ -1,0 +1,13 @@
+<h1>Movie Database</h1>
+
+<p>
+  <%= link_to "Movies", "/movies/index" %> | <%= link_to "Actors", "/actors/index" %> |
+  <%= link_to "Directors", "/directors/index" %>
+</p>
+<hr>
+
+<ul>
+  <% Actor.read.order("name").each do |actor| %>
+    <li><%= actor["name"] %></li>
+  <% end %>
+</ul>

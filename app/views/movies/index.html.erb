@@ -1,5 +1,11 @@
 <h1>Movie Database</h1>
 
+<p>
+  <%= link_to "Movies", "/movies/index" %> | <%= link_to "Actors", "/actors/index" %> |
+  <%= link_to "Directors", "/directors/index" %>
+</p>
+
+
 <% all_movies = Movie.read %>
 
 <hr>
@@ -10,9 +16,14 @@
 
   <% all_movies.each do |movie| %>
 
-    <% d = Director.read(movie["director_id"]) %>
+    <% director = Director.find_by("id" => movie["director_id"]) %>
 
-    <li><strong><%= movie["title"] %></strong> (<%= movie["year"] %>), directed by <%= d["name"] %>.</li>
+    <li>
+      <strong>
+        <a href="/movies/show?id=<%= movie.id %>"><%= movie["title"] %></a>
+      </strong>
+      (<%= movie["year"] %>), directed by <%= director["name"] %>.
+    </li>
 
   <% end %>
 

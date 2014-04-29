@@ -1,0 +1,26 @@
+<h1>Movie Database</h1>
+
+<p>
+  <%= link_to "Movies", "/movies/index" %> | <%= link_to "Actors", "/actors/index" %> |
+  <%= link_to "Directors", "/directors/index" %>
+</p>
+
+<hr>
+
+<% the_movie = Movie.first %>
+
+<h2><%= the_movie["title"] %> (<%= the_movie["year"] %>)</h2>
+
+<%= image_tag the_movie["poster_url"] %>
+
+<p><strong>Starring:</strong></p>
+
+<ul>
+  <li>Tom Hanks as Jim Lovell</li>
+  <li>Kevin Bacon as Jack Swigert</li>
+  <li>Bill Paxton as Fred Haise</li>
+</ul>
+
+
+
+

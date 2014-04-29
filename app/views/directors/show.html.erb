@@ -1,14 +1,17 @@
 <h1>Movie Database</h1>
 
-<% the_id = params["id"] %>
-
-<% director = Director.read(the_id) %>
-
-<% movies = Movie.read("director_id" => director["id"]) %>
+<p>
+  <%= link_to "Movies", "/movies/index" %> | <%= link_to "Actors", "/actors/index" %> |
+  <%= link_to "Directors", "/directors/index" %>
+</p>
 
 <hr>
 
-<h2>Director: <%= director["name"] %></h2>
+<% the_id = params["id"] %>
+<% the_director = Director.read(the_id) %>
+<% movies = Movie.where("director_id" => the_director["id"]) %>
+
+<h2>Director: <%= the_director["name"] %></h2>
 
 <h4>Filmography</h4>
 

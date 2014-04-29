@@ -15,7 +15,7 @@
 
   <% all_directors.each do |director| %>
 
-    <li><a href="/directors/show?id=<%= director.id %>"><%= director["name"] %></a></li>
+    <li><a href="/directors/show?id=<%= director["id"] %>"><%= director["name"] %></a></li>
 
   <% end %>
 

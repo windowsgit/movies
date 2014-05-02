@@ -9,11 +9,7 @@
 
 <hr>
 
-<!-- http://localhost:3000/movies/show?id=7 -->
-
 <% the_movie_id = params["id"] %>
-
-<%# the_movie = Movie.find_by("id" => the_movie_id) %>
 <% the_movie = Movie.read(the_movie_id) %>
 
 <h2><%= the_movie["title"] %> (<%= the_movie["year"] %>)</h2>

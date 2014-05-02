@@ -1,5 +1,9 @@
 <h1>Movie Database</h1>
 
+<% sport = "Hockey" %>
+
+<%= sport %>
+
 <p>
   <%= link_to "Movies", "/movies/index" %> | <%= link_to "Actors", "/actors/index" %> |
   <%= link_to "Directors", "/directors/index" %>
@@ -30,7 +34,8 @@
 </ul>
 
 <% all_movies.each do |movie| %>
-  <img src="<%= movie["poster_url"] %>" width="120">
+  <%= link_to image_tag(movie["poster_url"], "width" => "120"), "/movies/show?id=#{movie["id"]}" %>
+  <%=  %>
 <% end %>
 
 <h2>Quick Stats</h2>

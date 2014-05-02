@@ -1,6 +1,8 @@
 <h1>Movie Database</h1>
 
+
 <p>
+
   <%= link_to "Movies", "/movies/index" %> | <%= link_to "Actors", "/actors/index" %> |
   <%= link_to "Directors", "/directors/index" %>
 </p>
@@ -20,12 +22,13 @@
 
 <p><strong>Starring:</strong></p>
 
-<% roles = Role.read("movie_id" => the_movie["id"])
+<% roles = Role.where("movie_id" => the_movie["id"]) %>
 
 <ul>
-  <li>Tom Hanks as Jim Lovell</li>
-  <li>Kevin Bacon as Jack Swigert</li>
-  <li>Bill Paxton as Fred Haise</li>
+  <% roles.each do |role| %>
+    <% the_actor = Actor.find_by("id" => role["actor_id"]) %>
+    <li><%= the_actor["name"] %> as <%= role["character"] %></li>
+  <% end %>
 </ul>
 
 

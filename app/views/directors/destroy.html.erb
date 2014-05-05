@@ -5,6 +5,12 @@
   <%= link_to "Directors", "/directors" %>
 </p>
 
+<hr>
+
+<% the_id = params["id"] %>
+<% the_director = Director.read(the_id) %>
+<% the_director.delete %>
+
 <% all_directors = Director.read %>
 
 <hr>
@@ -13,7 +19,7 @@
 
 <ul>
 
-  <% all_directors.each do |director| %>
+<% all_directors.each do |director| %>
 
     <li>
       <%= link_to director["name"], "/directors/#{director["id"]}" %>

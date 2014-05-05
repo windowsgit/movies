@@ -1,29 +1,28 @@
 <h1>Movie Database</h1>
 
-
 <p>
 
   <%= link_to "Movies", "/movies/index" %> | <%= link_to "Actors", "/actors/index" %> |
-  <%= link_to "Directors", "/directors/index" %>
+  <%= link_to "Directors", "/directors" %>
 </p>
 
 <hr>
 
-<% the_movie_id = params["id"] %>
-<% the_movie = Movie.read(the_movie_id) %>
+<% movie_id = params["the_movie_id"] %>
+<% movie = Movie.read(movie_id) %>
 
-<h2><%= the_movie["title"] %> (<%= the_movie["year"] %>)</h2>
+<h2><%= movie["title"] %> (<%= movie["year"] %>)</h2>
 
-<%= image_tag the_movie["poster_url"] %>
+<%= image_tag movie["poster_url"] %>
 
 <p><strong>Starring:</strong></p>
 
-<% roles = Role.where("movie_id" => the_movie["id"]) %>
+<% roles = Role.where("movie_id" => movie["title"]) %>
 
 <ul>
   <% roles.each do |role| %>
-    <% the_actor = Actor.find_by("id" => role["actor_id"]) %>
-    <li><%= the_actor["name"] %> as <%= role["character"] %></li>
+    <% actor = Actor.find_by("id" => role["actor_id"]) %>
+    <li><%= actor["name"] %> as <%= role["character"] %></li>
   <% end %>
 </ul>
 

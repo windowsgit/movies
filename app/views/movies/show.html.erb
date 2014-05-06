@@ -8,7 +8,7 @@
 
 <hr>
 
-<% movie_id = params["the_movie_id"] %>
+<% movie_id = params["id"] %>
 <% movie = Movie.read(movie_id) %>
 
 <h2><%= movie["title"] %> (<%= movie["year"] %>)</h2>
@@ -17,7 +17,7 @@
 
 <p><strong>Starring:</strong></p>
 
-<% roles = Role.where("movie_id" => movie["title"]) %>
+<% roles = Role.where("movie_id" => movie["id"]) %>
 
 <ul>
   <% roles.each do |role| %>

@@ -1,13 +1,20 @@
 <h1>Movie Database</h1>
 
 <p>
-  <%= link_to "Movies", "/movies/index" %> | <%= link_to "Actors", "/actors/index" %> |
+  <%= link_to "Movies", "/movies" %> | <%= link_to "Actors", "/actors" %> |
   <%= link_to "Directors", "/directors" %>
 </p>
 <hr>
 
+<%= link_to "Add a New Actor", "/actors/new" %>
+
+
 <ul>
   <% Actor.read.order("name").each do |actor| %>
-    <li><%= actor["name"] %></li>
+    <li>
+      <%= link_to actor["name"], "/actors/#{actor["id"]}" %>
+      <%= link_to "(Delete)", "/actors/#{actor["id"]}", "method" => "delete" %>
+      <%= link_to "(Edit)", "/actors/#{actor["id"]}/edit" %>
+    </li>
   <% end %>
 </ul>

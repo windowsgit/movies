@@ -1,0 +1,19 @@
+<% actor = Actor.find_by("id" => params["id"]) %>
+
+<h1>Edit Actor #<%= actor["id"] %></h1>
+
+<%= form_tag "/actors#{actor["id"]}", "method" => "patch" %>
+
+  <p>
+    <%= label_tag "full_name", "What is the actor's name?" %>
+    <%= text_field_tag "full_name", actor["name"] %>
+  </p>
+
+  <p>
+    <%= label_tag "url", "Do you have a link to the a photo?" %>
+    <%= text_field_tag "url", actor["url"] %>
+  </p>
+
+  <%= submit_tag %> or <%= link_to "Cancel", "/actors" %>
+
+</form>

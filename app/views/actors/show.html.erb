@@ -1,0 +1,15 @@
+<h1>Movie Database</h1>
+
+<p>
+  <%= link_to "Movies", "/movies" %> | <%= link_to "Actors", "/actors" %> |
+  <%= link_to "Directors", "/directors" %>
+</p>
+
+<hr>
+
+<% actor = Actor.find_by("id" => params["id"]) %>
+
+<h2><%= actor["name"] %></h2>
+
+<%= image_tag actor["photo_url"] %>
+

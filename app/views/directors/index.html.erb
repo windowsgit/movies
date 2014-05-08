@@ -1,7 +1,7 @@
 <h1>Movie Database</h1>
 
 <p>
-  <%= link_to "Movies", "/movies/index" %> | <%= link_to "Actors", "/actors/index" %> |
+  <%= link_to "Movies", "/movies" %> | <%= link_to "Actors", "/actors" %> |
   <%= link_to "Directors", "/directors" %>
 </p>
 
@@ -11,13 +11,16 @@
 
 <h2>Directors</h2>
 
+<%= link_to "Add a New Director", "/directors/new" %>
+
 <ul>
 
   <% all_directors.each do |director| %>
 
     <li>
       <%= link_to director["name"], "/directors/#{director["id"]}" %>
-      (<%= link_to "Delete", "/directors/#{director["id"]}/delete" %>)
+      (<%= link_to "Delete", "/directors/#{director["id"]}", "method" => "delete" %>)
+      (<%= link_to "Edit", "/directors/#{director["id"]}/edit" %>)
     </li>
 
   <% end %>

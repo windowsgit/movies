@@ -1,7 +1,7 @@
 <h1>Movie Database</h1>
 
 <p>
-  <%= link_to "Movies", "/movies/index" %> | <%= link_to "Actors", "/actors/index" %> |
+  <%= link_to "Movies", "/movies" %> | <%= link_to "Actors", "/actors" %> |
   <%= link_to "Directors", "/directors" %>
 </p>
 
@@ -22,7 +22,12 @@
       <strong>
         <a href="/movies/show?id=<%= movie.id %>"><%= movie["title"] %></a>
       </strong>
-      (<%= movie["year"] %>), directed by <%= director["name"] %>.
+      (<%= movie["year"] %>)
+
+      <% if director.present? %>
+        , directed by <%= director["name"] %>.
+      <% end %>
+
     </li>
 
   <% end %>
@@ -38,8 +43,10 @@
 
 <ul>
   <li>We have <%= Movie.count %> movies and <%= Director.count %> directors in our database.</li>
-  <% the_director = Director.find_by("name" => "Ron Howard") %>
+
+  <% the_director = Director.first %>
   <li><%= the_director["name"] %> directed <%= Movie.where(:director_id => the_director["id"]).count %> of them.</li>
+
   <li><%= Movie.where("year" => 2012).count %> movies were released in 2012.</li>
 
   <li>The latest movie is <em><%= Movie.read.order("year desc").first["title"] %></em>.</li>

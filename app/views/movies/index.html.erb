@@ -1,16 +1,7 @@
-<h1>Movie Database</h1>
-
-<p>
-  <%= link_to "Movies", "/movies" %> | <%= link_to "Actors", "/actors" %> |
-  <%= link_to "Directors", "/directors" %>
-</p>
-
-
 <% all_movies = Movie.read %>
 
-<hr>
 
-<h2>Movie Titles</h2>
+<h2 class="item-link">Movie Titles</h2>
 
 <ul>
 
@@ -20,7 +11,7 @@
 
     <li>
       <strong>
-        <a href="/movies/show?id=<%= movie.id %>"><%= movie["title"] %></a>
+        <a class="item-link"  href="/movies/show?id=<%= movie.id %>"><%= movie["title"] %></a>
       </strong>
       (<%= movie["year"] %>)
 

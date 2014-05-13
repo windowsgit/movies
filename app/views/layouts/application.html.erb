@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Imdb</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>KIEI-925</title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Movie Database</h1>
+      <p>
+        <%= link_to "Movies", "/movies", "class" => "item-link"  %>
+        | <%= link_to "Actors", "/actors" %> |
+        <%= link_to "Directors", "/directors" %> | <%= link_to "Genres", '#' %>
+      </p>
+      <hr>
 
-<div>
-  <%= yield %>
-</div>
+    <div>
 
-</body>
+      <%= yield %>
+    </div>
+    </div>
+  </body>
 </html>

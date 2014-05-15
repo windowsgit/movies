@@ -3,8 +3,24 @@ Imdb::Application.routes.draw do
   # Specify a custom home page
   get "/" => "movies#index"
 
+
+  # Resource: Directors
+
+  # --- Create
+  get "/movies/new" => 'movies#new'
+  post "/movies" => 'movies#create'
+
+  # --- Read
   get "/movies" => 'movies#index'
-  get "/movies/show" => 'movies#show'
+  get "/movies/:id" => 'movies#show'
+
+  # -- Update
+  get "/movies/:id/edit" => 'movies#edit'
+  patch "/movies/:id" => 'movies#update'
+
+  # --- Delete
+  delete "/movies/:id" => 'movies#destroy'
+
 
 
   # Resource: Directors

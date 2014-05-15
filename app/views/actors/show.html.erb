@@ -1,15 +1,27 @@
-<h1>Movie Database</h1>
-
-<p>
-  <%= link_to "Movies", "/movies" %> | <%= link_to "Actors", "/actors" %> |
-  <%= link_to "Directors", "/directors" %>
-</p>
-
-<hr>
 
 <% actor = Actor.find_by("id" => params["id"]) %>
 
-<h2><%= actor["name"] %></h2>
+<div class="row">
+  <div class="col-md-4">
+    <h2><%= actor["name"] %></h2>
+    <%= image_tag actor["photo_url"] %>
+  </div>
+  <div class="col-md-8">
+    <h2>Movie Appearances</h2>
 
-<%= image_tag actor["photo_url"] %>
+    <% roles = Role.where("actor_id" => actor["id"]) %>
+
+    <ul>
+      <% roles.each do |role| %>
+        <% movie = Movie.find_by("id" => role["movie_id"]) %>
+        <li>
+          <%= role["character"] %>
+          in
+          <%= link_to movie["title"], "/movies/#{movie["id"]}" %>
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
+</div>
 

@@ -1,52 +1,61 @@
-<% all_movies = Movie.read %>
+<div class="row">
+  <div class="col-md-2 col-md-offset-10">
+    <%= link_to "Add a New Movie", "/movies/new", "class" => 'btn btn-lg btn-primary' %>
+  </div>
+</div>
 
 
-<h2 class="item-link">Movie Titles</h2>
+<div class="row">
 
-<ul>
+  <div class="col-md-8">
 
-  <% all_movies.each do |movie| %>
+    <% Movie.read.order("title desc").each do |movie| %>
 
-    <% director = Director.find_by("id" => movie["director_id"]) %>
+      <div class="row">
 
-    <li>
-      <strong>
-        <a class="item-link"  href="/movies/show?id=<%= movie.id %>"><%= movie["title"] %></a>
-      </strong>
-      (<%= movie["year"] %>)
+        <div class="col-md-4">
+          <%= link_to image_tag(movie["poster_url"]), "/movies/#{movie["id"]}" %>
+        </div>
 
-      <% if director.present? %>
-        , directed by <%= director["name"] %>.
-      <% end %>
+        <div class="col-md-8">
+          <h2>
+            <%= link_to movie["title"], "/movies/#{movie["id"]}" %>
+          </h2>
+          <p>Year: <%= movie["year"] %></p>
 
-    </li>
+          <% director = Director.find_by("id" => movie["director_id"]) %>
+          <% if director.present? %>
+            <p>Directed by: <%= director["name"] %></p>
+          <% end %>
+        </div>
 
-  <% end %>
+      </div>
+    <% end %>
+  </div>
 
-</ul>
+  <div class="col-md-4 well">
+    <h2>Did You Know...</h2>
 
-<% all_movies.each do |movie| %>
-  <%= link_to image_tag(movie["poster_url"], "width" => "120"), "/movies/show?id=#{movie["id"]}" %>
-  <%=  %>
-<% end %>
+    <ul>
+      <li>We have <%= Movie.count %> movies and <%= Director.count %> directors in our database.</li>
 
-<h2>Quick Stats</h2>
+      <li>
+        <% random_director = Director.sample %>
+        <% number_of_movies = Movie.where(:director_id => random_director["id"]).count %>
+        <%= random_director["name"] %>
+        directed
+        <%= pluralize(number_of_movies, "movie") %>.
+      </li>
 
-<ul>
-  <li>We have <%= Movie.count %> movies and <%= Director.count %> directors in our database.</li>
+      <li><%= Movie.where("year" => 2012).count %> movies were released in 2012.</li>
 
-  <% the_director = Director.first %>
-  <li><%= the_director["name"] %> directed <%= Movie.where(:director_id => the_director["id"]).count %> of them.</li>
+      <li>The latest movie is <em><%= Movie.read.order("year desc").first["title"] %></em>.</li>
+      <li>The oldest movie is <em><%= Movie.read.order("year asc").first["title"] %></em>.</li>
+    </ul>
+    <a href="http://www.imdb.com">Click here to go to imdb.com</a>.
+  </div>
 
-  <li><%= Movie.where("year" => 2012).count %> movies were released in 2012.</li>
-
-  <li>The latest movie is <em><%= Movie.read.order("year desc").first["title"] %></em>.</li>
-  <li>The oldest movie is <em><%= Movie.read.order("year asc").first["title"] %></em>.</li>
-</ul>
-
-<hr>
-
-<a href="http://www.imdb.com">Click here to go to imdb.com</a>.
+</div>
 
 
 

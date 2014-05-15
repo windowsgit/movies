@@ -1,21 +1,38 @@
 <% movie_id = params["id"] %>
 <% movie = Movie.read(movie_id) %>
 
-<h2><%= movie["title"] %> (<%= movie["year"] %>)</h2>
+<div class="row">
 
-<%= image_tag movie["poster_url"] %>
+  <div class="col-md-4">
+    <%= image_tag(movie["poster_url"]) %>
+  </div>
 
-<p><strong>Starring:</strong></p>
+  <div class="col-md-8">
+    <h1><%= movie["title"] %>
+      <small>Year: <%= movie["year"] %></small>
+    </h1>
 
-<% roles = Role.where("movie_id" => movie["id"]) %>
+    <% director = Director.find_by("id" => movie["director_id"]) %>
+    <% if director.present? %>
+      <h4>Directed by <%= link_to director["name"], "/directors/#{director["id"]}" %></h4>
+    <% end %>
 
-<ul>
-  <% roles.each do |role| %>
-    <% actor = Actor.find_by("id" => role["actor_id"]) %>
-    <li><%= actor["name"] %> as <%= role["character"] %></li>
-  <% end %>
-</ul>
+    <h3>Cast</h3>
 
+    <% roles = Role.where("movie_id" => movie["id"]) %>
 
+    <ul>
+      <% roles.each do |role| %>
+        <% actor = Actor.find_by("id" => role["actor_id"]) %>
+        <li>
+          <%= link_to actor["name"], "/actors/#{actor["id"]}" %>
+          as
+          <%= role["character"] %>
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
+</div>
 
 

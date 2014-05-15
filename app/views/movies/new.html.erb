@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>Add a New Movie</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-5">
+
+    <%= form_tag "/movies", "method" => "post"  %>
+
+      <div class="form-group">
+        <%= label_tag "title", "What is the title of the movie?" %>
+        <%= text_field_tag "title", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "year", "Year" %>
+        <%= text_field_tag "year", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "year", "Link to a poster image" %>
+        <%= text_field_tag "url", "", "class" => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "chosen_director_id", "Choose a Director:" %>
+        <%= select_tag "chosen_director_id",
+                       options_from_collection_for_select(Director.read.order("name"),
+                        "id",
+                        "name"), "class" => "form-control" %>
+      </div>
+
+      <%= submit_tag "Add This Movie", "class" => "btn btn-lg btn-success" %> or <%= link_to "Cancel", "/movies" %>
+
+    </form>
+</div>
+</div>

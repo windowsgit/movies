@@ -9,7 +9,7 @@ gl = Director.create("name" => "George Lucas", "photo_url" => "http://ia.media-i
 Movie.delete_all
 apollo13 = Movie.create("title" => "Apollo 13", "year" => 1995, "director_id" => rh.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTM2Njg2NjU5NF5BMl5BanBnXkFtZTYwODI5MDc4._V1_SY226_SX144_AL_.jpg")
 Movie.create("title" => "Jurassic Park", "year" => 1993, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjQzODQyMzk2Nl5BMl5BanBnXkFtZTcwNTg4MjQ3OA@@._V1_SX214_AL_.jpg")
-Movie.create("title" => "Lincoln", "year" => 2012, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTQzNzczMDUyNV5BMl5BanBnXkFtZTcwNjM2ODEzOA@@._V1_SY317_CR0,0,214,317_AL_.jpg")
+lincoln = Movie.create("title" => "Lincoln", "year" => 2012, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTQzNzczMDUyNV5BMl5BanBnXkFtZTcwNjM2ODEzOA@@._V1_SY317_CR0,0,214,317_AL_.jpg")
 raiders = Movie.create("title" => "Raiders of the Lost Ark", "year" => 2012, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_SX214_AL_.jpg")
 Movie.create("title" => "The Dark Knight", "year" => 2008, "director_id" => cn.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY317_CR0,0,214,317_AL_.jpg")
 Movie.create("title" => "Toy Story", "year" => 1995, "director_id" => jl.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTgwMjI4MzU5N15BMl5BanBnXkFtZTcwMTMyNTk3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg")
@@ -37,5 +37,15 @@ Role.create("movie_id" => star_wars.id, "actor_id" => harrison.id, "character" =
 Role.create("movie_id" => star_wars.id, "actor_id" => mark.id, "character" => "Luke Skywalker")
 Role.create("movie_id" => star_wars.id, "actor_id" => carrie.id, "character" => "Princess Leia")
 
+User.delete_all
+jeff = User.create("username" => "jeff", "password" => "hockey", "name" => "Jeff Cohen")
+brian = User.create("username" => "brian", "password" => "homework", "name" => "Brian Eng")
+
+Review.delete_all
+Review.create("user_id" => jeff["id"], "movie_id" => star_wars["id"], "rating" => 5, "content" => "Four words: Let the wookie win.")
+Review.create("user_id" => jeff["id"], "movie_id" => apollo13["id"], "rating" => 5, "content" => "Great movie about teamwork, improvisation, and how to read error messages.")
+Review.create("user_id" => brian["id"], "movie_id" => lincoln["id"], "rating" => 4, "content" => "Spoiler alert: he gets shot.")
+Review.create("user_id" => brian["id"], "movie_id" => star_wars["id"], "rating" => 4, "content" => "These are not the actors you're looking for.")
+Review.create("user_id" => jeff["id"], "movie_id" => lincoln["id"], "rating" => 3, "content" => "Should have focused more on the Gettysburg Address, the best speech ever written.")
 
 puts "There are now #{Director.count} directors, #{Movie.count} movies, and #{Actor.count} actors."

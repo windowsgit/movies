@@ -3,8 +3,13 @@
  *= require_tree .
  */
 
+.header {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+}
 
-.row { margin-bottom: 36px; }
+.aside { margin-top: 36px; }
+.movie { margin-bottom: 36px; }
 
 img { border: 1px solid #CCC; box-shadow: 10px 10px 10px #999; }
 

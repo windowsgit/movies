@@ -1,3 +1,14 @@
+User:
+  - username: string
+  - password: string
+  - name: string
+
+Review:
+  - user_id: integer
+  - movie_id: integer
+  - rating: integer
+  - content: text
+
 Movie:
   - title: string
   - year: integer

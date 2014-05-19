@@ -13,14 +13,28 @@
   <body>
 
     <div class="container">
+      <div class="header">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Movie Database</h1>
+          </div>
+        </div>
 
-      <h1>Movie Database</h1>
-      <p>
-        <%= link_to "Movies", "/movies", "class" => "item-link"  %>
-        | <%= link_to "Actors", "/actors" %> |
-        <%= link_to "Directors", "/directors" %> | <%= link_to "Genres", '#' %>
-      </p>
-      <hr>
+        <div class="row">
+          <div class="col-md-8">
+            <%= link_to "Movies", "/movies", "class" => "item-link"  %> |
+            <%= link_to "Actors", "/actors" %> |
+            <%= link_to "Directors", "/directors" %>
+          </div>
+          <div class="pull-right">
+            <%= link_to "Sign Up", '#' %> |
+            <%= link_to "Sign In", '#' %> |
+            <%= link_to "My Profile", '#' %> |
+            <%= link_to "Sign Out", '#' %>
+          </div>
+        </div>
+        <hr>
+      </div>
 
       <%= yield %>
 

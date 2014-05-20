@@ -1,11 +1,18 @@
 class UsersController < ApplicationController
 
   def create
-    User.create("username" => params["username"],
-                "password" => params["password"],
-                "name" => params["name"])
+    existing_user = User.find_by("username" => params["username"])
 
-    redirect_to "/movies"
+    if existing_user == nil
+      User.create("username" => params["username"],
+                  "password" => params["password"],
+                  "name" => params["name"])
+
+      redirect_to "/movies"
+    else
+      @message = "That username is taken.  Try again."
+      render "/users/new"
+    end
   end
 
   def update

@@ -12,7 +12,7 @@ Movie.create("title" => "Jurassic Park", "year" => 1993, "director_id" => ss.id,
 lincoln = Movie.create("title" => "Lincoln", "year" => 2012, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTQzNzczMDUyNV5BMl5BanBnXkFtZTcwNjM2ODEzOA@@._V1_SY317_CR0,0,214,317_AL_.jpg")
 raiders = Movie.create("title" => "Raiders of the Lost Ark", "year" => 2012, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_SX214_AL_.jpg")
 Movie.create("title" => "The Dark Knight", "year" => 2008, "director_id" => cn.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY317_CR0,0,214,317_AL_.jpg")
-Movie.create("title" => "Toy Story", "year" => 1995, "director_id" => jl.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTgwMjI4MzU5N15BMl5BanBnXkFtZTcwMTMyNTk3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg")
+toy_story = Movie.create("title" => "Toy Story", "year" => 1995, "director_id" => jl.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTgwMjI4MzU5N15BMl5BanBnXkFtZTcwMTMyNTk3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg")
 Movie.create("title" => "Skyfall", "year" => 2012, "director_id" => sm.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjAyODkzNDgzMF5BMl5BanBnXkFtZTcwMDMxMDI4Nw@@._V1_SX214_AL_.jpg")
 star_wars = Movie.create("title" => "Star Wars", "year" => 1977, "director_id" => sm.id, "poster_url" => "http://www.posterplanet.net/new/images/ep4dvd.jpg")
 
@@ -25,6 +25,7 @@ bill = Actor.create("name" => "Bill Paxton", "photo_url" => "http://ia.media-imd
 kevin = Actor.create("name" => "Kevin Bacon", "photo_url" => "http://ia.media-imdb.com/images/M/MV5BMTM0ODE5MjI1OV5BMl5BanBnXkFtZTcwNDc2MjAzMw@@._V1_SY317_CR8,0,214,317_AL_.jpg")
 karen = Actor.create("name" => "Karen Allen", "photo_url" => "http://ia.media-imdb.com/images/M/MV5BMTg2NjgyMjQwMF5BMl5BanBnXkFtZTcwNzkwMjE3MQ@@._V1_SX214_CR0,0,214,317_AL_.jpg")
 paul = Actor.create("name" => "Paul Freeman", "photo_url" => "http://ia.media-imdb.com/images/M/MV5BMjA4Mzc2NjU2N15BMl5BanBnXkFtZTcwNzYzMDAxMw@@._V1_SX214_CR0,0,214,317_AL_.jpg")
+tim = Actor.create("name" => "Tim Allen", "photo_url" => "http://ia.media-imdb.com/images/M/MV5BMTI5ODY0NTAwOF5BMl5BanBnXkFtZTcwOTI3NjQxMw@@._V1_SX214_CR0,0,214,317_AL_.jpg")
 
 Role.delete_all
 Role.create("movie_id" => apollo13.id, "actor_id" => tom.id, "character" => "Jim Lovell")
@@ -36,6 +37,8 @@ Role.create("movie_id" => raiders.id, "actor_id" => paul.id, "character" => "Dr.
 Role.create("movie_id" => star_wars.id, "actor_id" => harrison.id, "character" => "Han Solo")
 Role.create("movie_id" => star_wars.id, "actor_id" => mark.id, "character" => "Luke Skywalker")
 Role.create("movie_id" => star_wars.id, "actor_id" => carrie.id, "character" => "Princess Leia")
+Role.create("movie_id" => toy_story.id, "actor_id" => tom.id, "character" => "Woody")
+Role.create("movie_id" => toy_story.id, "actor_id" => tim.id, "character" => "Buzz Lightyear")
 
 User.delete_all
 jeff = User.create("username" => "jeff", "password" => "hockey", "name" => "Jeff Cohen")

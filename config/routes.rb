@@ -4,6 +4,30 @@ Imdb::Application.routes.draw do
   get "/" => "movies#index"
 
 
+  # Sign-In and Sign-Out
+
+  get "/login" => 'sessions#login'
+  post "/authenticate" => 'sessions#authenticate'
+
+  # Resource: Reviews
+
+  # --- Create
+  get "/reviews/new" => 'reviews#new'
+  post "/reviews" => 'reviews#create'
+
+  # --- Read
+  get "/reviews" => 'reviews#index'
+  get "/reviews/:id" => 'reviews#show'
+
+  # -- Update
+  get "/reviews/:id/edit" => 'reviews#edit'
+  patch "/reviews/:id" => 'reviews#update'
+
+  # --- Delete
+  delete "/reviews/:id" => 'reviews#destroy'
+
+
+
   # Resource: Users
 
   # --- Create

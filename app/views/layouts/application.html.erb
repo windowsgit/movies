@@ -28,13 +28,15 @@
           </div>
           <div class="pull-right">
             <%= link_to "Sign Up", '/users/new' %> |
-            <%= link_to "Sign In", '#' %> |
+            <%= link_to "Sign In", '/login' %> |
             <%= link_to "My Profile", '#' %> |
-            <%= link_to "Sign Out", '#' %>
+            <%= link_to "Sign Out", '/logout' %>
           </div>
         </div>
         <hr>
+        <h4 class="text-warning"><%= notice %></h4>
       </div>
+
 
       <%= yield %>
 

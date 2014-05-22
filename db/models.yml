@@ -8,6 +8,7 @@ Review:
   - movie_id: integer
   - rating: integer
   - content: text
+  - created_at: datetime
 
 Movie:
   - title: string

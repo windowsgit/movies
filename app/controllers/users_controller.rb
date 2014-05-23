@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   def create
     existing_user = User.find_by("username" => params["username"])
 
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to "/movies"
     else
       @message = "That username is taken.  Try again."
-      render "/users/new"
+      render "new"
     end
   end
 

@@ -11,6 +11,13 @@
     <h1><%= movie["title"] %>
       <small>Year: <%= movie["year"] %></small>
     </h1>
+    <% avg = Review.where("movie_id" => movie["id"]).average(:rating).to_i %>
+    <h4>Avg Rating:
+      <% avg.times do %>
+        &star;
+      <% end %>
+    </h4>
+
 
     <% director = Director.find_by("id" => movie["director_id"]) %>
     <% if director.present? %>

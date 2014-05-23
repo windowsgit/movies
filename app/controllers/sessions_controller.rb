@@ -4,9 +4,10 @@ class SessionsController < ApplicationController
     the_user = User.find_by("username" => params["username"])
     if the_user != nil
       if the_user["password"] == params["password"]
-        redirect_to "/", :notice => "Hello, #{the_user["name"]}!"
+        cookies["user_id"] = the_user["id"]
+        redirect_to "/", :notice => "Wazzzup"
       else
-        logger.debug the_user.inspect
+        logger.debug "Wazzzzup!"
         redirect_to "/login", :notice => "Unknown password."
       end
     else

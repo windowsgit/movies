@@ -6,6 +6,7 @@ Imdb::Application.routes.draw do
 
   # Sign-In and Sign-Out
 
+  get "/logout" => 'sessions#logout'
   get "/login" => 'sessions#login'
   post "/authenticate" => 'sessions#authenticate'
 

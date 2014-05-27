@@ -45,11 +45,11 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem "ez"
+gem "hirb"
 
 group :development, :test do
   gem "sqlite3"
   gem "quiet_assets"
-  gem "hirb"
 end
 
 group :production do

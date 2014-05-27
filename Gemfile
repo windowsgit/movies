@@ -44,8 +44,9 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "ez"
 gem "hirb"
+gem "ez"
+gem "googlecharts"
 
 group :development, :test do
   gem "sqlite3"

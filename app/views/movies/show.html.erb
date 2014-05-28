@@ -1,5 +1,6 @@
 <% movie_id = params["id"] %>
 <% movie = Movie.read(movie_id) %>
+<% movie.update "page_count" => (movie["page_count"] + 1) %>
 
 <div class="row">
 

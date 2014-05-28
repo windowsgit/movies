@@ -15,6 +15,7 @@ Movie:
   - year: integer
   - poster_url: string
   - director_id: integer
+  - page_count: integer
 
 Director:
   - name: string

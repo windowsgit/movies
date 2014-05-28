@@ -7,14 +7,14 @@ sm = Director.create("name" => "Sam Mendes", "photo_url" => "http://ia.media-imd
 gl = Director.create("name" => "George Lucas", "photo_url" => "http://ia.media-imdb.com/images/M/MV5BMTA0Mjc0NzExNzBeQTJeQWpwZ15BbWU3MDEzMzQ3MDI@._V1_SY317_CR0,0,214,317_AL_.jpg")
 
 Movie.delete_all
-apollo13 = Movie.create("title" => "Apollo 13", "year" => 1995, "director_id" => rh.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTM2Njg2NjU5NF5BMl5BanBnXkFtZTYwODI5MDc4._V1_SY226_SX144_AL_.jpg")
-Movie.create("title" => "Jurassic Park", "year" => 1993, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjQzODQyMzk2Nl5BMl5BanBnXkFtZTcwNTg4MjQ3OA@@._V1_SX214_AL_.jpg")
-lincoln = Movie.create("title" => "Lincoln", "year" => 2012, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTQzNzczMDUyNV5BMl5BanBnXkFtZTcwNjM2ODEzOA@@._V1_SY317_CR0,0,214,317_AL_.jpg")
-raiders = Movie.create("title" => "Raiders of the Lost Ark", "year" => 2012, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_SX214_AL_.jpg")
-Movie.create("title" => "The Dark Knight", "year" => 2008, "director_id" => cn.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY317_CR0,0,214,317_AL_.jpg")
-toy_story = Movie.create("title" => "Toy Story", "year" => 1995, "director_id" => jl.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTgwMjI4MzU5N15BMl5BanBnXkFtZTcwMTMyNTk3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg")
-Movie.create("title" => "Skyfall", "year" => 2012, "director_id" => sm.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjAyODkzNDgzMF5BMl5BanBnXkFtZTcwMDMxMDI4Nw@@._V1_SX214_AL_.jpg")
-star_wars = Movie.create("title" => "Star Wars", "year" => 1977, "director_id" => sm.id, "poster_url" => "http://www.posterplanet.net/new/images/ep4dvd.jpg")
+apollo13 = Movie.create("page_count" => 0, "title" => "Apollo 13", "year" => 1995, "director_id" => rh.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTM2Njg2NjU5NF5BMl5BanBnXkFtZTYwODI5MDc4._V1_SY226_SX144_AL_.jpg")
+Movie.create("page_count" => 0, "title" => "Jurassic Park", "year" => 1993, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjQzODQyMzk2Nl5BMl5BanBnXkFtZTcwNTg4MjQ3OA@@._V1_SX214_AL_.jpg")
+lincoln = Movie.create("page_count" => 0, "title" => "Lincoln", "year" => 2012, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTQzNzczMDUyNV5BMl5BanBnXkFtZTcwNjM2ODEzOA@@._V1_SY317_CR0,0,214,317_AL_.jpg")
+raiders = Movie.create("page_count" => 0, "title" => "Raiders of the Lost Ark", "year" => 2012, "director_id" => ss.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_SX214_AL_.jpg")
+Movie.create("page_count" => 0, "title" => "The Dark Knight", "year" => 2008, "director_id" => cn.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY317_CR0,0,214,317_AL_.jpg")
+toy_story = Movie.create("page_count" => 0, "title" => "Toy Story", "year" => 1995, "director_id" => jl.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMTgwMjI4MzU5N15BMl5BanBnXkFtZTcwMTMyNTk3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg")
+Movie.create("page_count" => 0, "title" => "Skyfall", "year" => 2012, "director_id" => sm.id, "poster_url" => "http://ia.media-imdb.com/images/M/MV5BMjAyODkzNDgzMF5BMl5BanBnXkFtZTcwMDMxMDI4Nw@@._V1_SX214_AL_.jpg")
+star_wars = Movie.create("page_count" => 0, "title" => "Star Wars", "year" => 1977, "director_id" => sm.id, "poster_url" => "http://www.posterplanet.net/new/images/ep4dvd.jpg")
 
 Actor.delete_all
 harrison = Actor.create("name" => "Harrison Ford", "photo_url" => "http://ia.media-imdb.com/images/M/MV5BMTY4Mjg0NjIxOV5BMl5BanBnXkFtZTcwMTM2NTI3MQ@@._V1_SX214_CR0,0,214,317_AL_.jpg")

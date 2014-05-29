@@ -2,7 +2,12 @@
   <div class="col-md-12">
     <h3>Most Popular</h3>
 
-    <%= image_tag Gchart.bar(:size => '850x250',
+    <%= image_tag "http://chart.apis.google.com/chart?chxl=0:|Apollo+13|Jurassic+Park|Lincoln|Raiders+of+the+Lost+Ark|The+Dark+Knight|Toy+Story|Skyfall|Star+Wars&chxt=x&chbh=40,70&chd=s:93xrlfYS&cht=bvs&chs=850x250&chxr=0,100,100" %>
+
+    <%# popular_movies = Movie.order('page_count desc').limit(8) %>
+
+    <!-- TO DO: Update the code below to use live pageview traffic data -->
+    <%#= image_tag Gchart.bar(:size => '850x250',
                              :bar_width_and_spacing => '40,70',
                              :axis_with_labels => 'x',
                              :axis_labels => [['Apollo 13', 'Jurassic Park', 'Lincoln', 'Raiders of the Lost Ark', 'The Dark Knight', 'Toy Story', "Skyfall", "Star Wars"]],

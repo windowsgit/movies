@@ -42,13 +42,13 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "hirb"
 gem "ez"
-gem "googlecharts"
+# gem "googlecharts"
 
 group :development, :test do
   gem "sqlite3"
   gem "quiet_assets"
+  gem "hirb"
 end
 
 group :production do

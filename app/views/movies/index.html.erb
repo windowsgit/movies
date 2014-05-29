@@ -2,9 +2,9 @@
   <div class="col-md-12">
     <h3>Most Popular</h3>
 
-    <%= image_tag Gchart.bar(:size => '800x200',
-                             :axis_with_labels => 'y',
-                             :orientation => 'horizontal',
+    <%= image_tag Gchart.bar(:size => '850x250',
+                             :bar_width_and_spacing => '40,70',
+                             :axis_with_labels => 'x',
                              :axis_labels => [['Apollo 13', 'Jurassic Park', 'Lincoln', 'Raiders of the Lost Ark', 'The Dark Knight', 'Toy Story', "Skyfall", "Star Wars"]],
                              :data => [100, 90, 80, 70, 60, 50, 40, 30]) %>
   </div>

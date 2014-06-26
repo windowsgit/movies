@@ -2,6 +2,9 @@ Imdb::Application.routes.draw do
 
   # Specify a custom home page
   get "/" => "movies#index"
+  get "/", :controller => "movies", :action => "index"
+  # get "/", :to => 'movies#index'
+
 
 
   # Sign-In and Sign-Out

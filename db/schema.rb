@@ -11,44 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528221904) do
-
-  create_table "actors", force: true do |t|
-    t.string "name"
-    t.string "photo_url"
-  end
+ActiveRecord::Schema.define(version: 20140606141205) do
 
   create_table "directors", force: true do |t|
-    t.string "name"
-    t.string "photo_url"
+    t.string   "name"
+    t.string   "photo_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "movies", force: true do |t|
-    t.string  "title"
-    t.integer "year"
-    t.string  "poster_url"
-    t.integer "director_id"
-    t.integer "page_count"
+    t.integer  "page_count"
+    t.string   "title"
+    t.integer  "director_id"
+    t.integer  "year"
+    t.string   "poster_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "avg_rating",  default: 0
   end
 
   create_table "reviews", force: true do |t|
-    t.integer  "user_id"
+    t.string   "content"
     t.integer  "movie_id"
-    t.integer  "rating"
-    t.text     "content"
     t.datetime "created_at"
-  end
-
-  create_table "roles", force: true do |t|
-    t.integer "movie_id"
-    t.integer "actor_id"
-    t.string  "character"
-  end
-
-  create_table "users", force: true do |t|
-    t.string "username"
-    t.string "password"
-    t.string "name"
+    t.datetime "updated_at"
   end
 
 end

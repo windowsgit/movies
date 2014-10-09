@@ -11,31 +11,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606141205) do
+ActiveRecord::Schema.define(version: 0) do
+
+  create_table "actors", force: true do |t|
+    t.string "name"
+    t.string "photo_url"
+  end
 
   create_table "directors", force: true do |t|
-    t.string   "name"
-    t.string   "photo_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
+    t.string "photo_url"
   end
 
   create_table "movies", force: true do |t|
-    t.integer  "page_count"
-    t.string   "title"
-    t.integer  "director_id"
-    t.integer  "year"
-    t.string   "poster_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "avg_rating",  default: 0
+    t.string  "title"
+    t.integer "year"
+    t.string  "poster_url"
+    t.integer "director_id"
+    t.integer "page_count"
   end
 
+  add_index "movies", ["director_id"], name: "index_movies_on_director_id"
+
   create_table "reviews", force: true do |t|
-    t.string   "content"
+    t.integer  "user_id"
     t.integer  "movie_id"
+    t.integer  "rating"
+    t.text     "content"
     t.datetime "created_at"
-    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["movie_id"], name: "index_reviews_on_movie_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+
+  create_table "roles", force: true do |t|
+    t.integer "movie_id"
+    t.integer "actor_id"
+    t.string  "character"
+  end
+
+  add_index "roles", ["actor_id"], name: "index_roles_on_actor_id"
+  add_index "roles", ["movie_id"], name: "index_roles_on_movie_id"
+
+  create_table "users", force: true do |t|
+    t.string "username"
+    t.string "password"
+    t.string "name"
   end
 
 end

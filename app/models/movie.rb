@@ -1,10 +1,9 @@
 class Movie < ActiveRecord::Base
 
   belongs_to :director
+
+  has_many :reviews
   has_many :roles
-  has_many :actors, :through => :roles
+  has_many :actors, through: :roles
 
 end
-
-m = Movie.first
-m.actors

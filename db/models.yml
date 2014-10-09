@@ -1,45 +1,44 @@
-# User:
-#   - username: string
-#   - password: string
-#   - first_name: string
-#   - last_name: string
+User:
+  - username: string
+  - password: string
+  - name: string
 
-# Review:
-#   - user_id: integer
-#   - movie_id: integer
-#   - rating: integer
-#   - content: text
-#   - created_at: datetime
+Review:
+  - user_id: integer
+  - movie_id: integer
+  - rating: integer
+  - content: text
+  - created_at: datetime
 
-# Movie:
+Movie:
+  - title: string
+  - year: integer
+  - poster_url: string
+  - director_id: integer
+  - page_count: integer
+
+Director:
+  - name: string
+  - photo_url: string
+
+Actor:
+  - name: string
+  - photo_url: string
+
+Role:
+  - movie_id: integer
+  - actor_id: integer
+  - character: string
+
+# Example table for a typical Book model.
+#
+# Book:
 #   - title: string
-#   - year: integer
-#   - poster_url: string
-#   - director_id: integer
-#   - page_count: integer
-
-# Director:
-#   - name: string
-#   - photo_url: string
-
-# Actor:
-#   - name: string
-#   - photo_url: string
-
-# Role:
-#   - movie_id: integer
-#   - actor_id: integer
-#   - character: string
-
-# # Example table for a typical Book model.
-# #
-# # Book:
-# #   - title: string
-# #   - price: integer
-# #   - author: string
-# #   - summary: text
-# #   - hardcover: boolean
-# #
-# # Follow the syntax exactly (colons and spacing are important).
-# # Column type choices are: string, text, integer, and boolean.
-# # You can have as many models as you want in this file.
+#   - price: integer
+#   - author: string
+#   - summary: text
+#   - hardcover: boolean
+#
+# Follow the syntax exactly (colons and spacing are important).
+# Column type choices are: string, text, integer, and boolean.
+# You can have as many models as you want in this file.

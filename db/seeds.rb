@@ -61,7 +61,7 @@ Review.create("user_id" => jeff["id"], "movie_id" => lincoln["id"], "rating" => 
 Review.create("user_id" => grover["id"], "movie_id" => lincoln["id"], "rating" => 3, "content" => "Should have focused more on the Gettysburg Address, the best speech ever written.")
 
 puts "There are now #{Director.count} directors, #{Movie.count} movies, and #{Actor.count} actors."
-
-puts "How many reviews are there for Star Wars?"
-puts "Which movies got at least one 5-star review?"
-puts "How many movies were made after the year 2001?"
+puts
+puts "1. How many reviews are there for Star Wars?"
+puts "2. Which movies got at least one 5-star review?"
+puts "3. How many movies were made after the year 2001?"

@@ -36,8 +36,6 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.1.0)
-    ez (1.1.1)
-      hirb (~> 0.7)
     googlecharts (1.6.8)
     hike (1.2.3)
     hirb (0.7.2)
@@ -120,7 +118,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
-  ez
   googlecharts
   hirb
   jbuilder (~> 1.2)

@@ -62,6 +62,6 @@ Review.create("user_id" => grover["id"], "movie_id" => lincoln["id"], "rating" =
 
 puts "There are now #{Director.count} directors, #{Movie.count} movies, and #{Actor.count} actors."
 puts
-puts "1. How many reviews are there for Star Wars?"
-puts "2. Which movies got at least one 5-star review?"
-puts "3. How many movies were made after the year 2001?"
+puts "1. How many movies were made after the year 2001?"
+puts "2. How many reviews are there for Star Wars?"
+puts "3. Which movies got at least one 5-star review?"

@@ -4,6 +4,7 @@ movies
 ### Installing
 
 $ `bundle install`
+
 $ `rake db:schema:load db:seed`
 
 

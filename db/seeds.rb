@@ -47,13 +47,21 @@ Role.create("movie_id" => toy_story.id, "actor_id" => tim.id, "character" => "Bu
 User.delete_all
 jeff = User.create("username" => "jeff", "password" => "hockey", "name" => "Jeff Cohen")
 brian = User.create("username" => "brian", "password" => "homework", "name" => "Brian Eng")
+grover = User.create("username" => "grover", "password" => "homework", "name" => "Grover")
 
 Review.delete_all
 Review.create("user_id" => jeff["id"], "movie_id" => star_wars["id"], "rating" => 5, "content" => "Four words: Let the wookie win.")
 Review.create("user_id" => brian["id"], "movie_id" => star_wars["id"], "rating" => 4, "content" => "These are not the actors you're looking for.")
+Review.create("user_id" => grover["id"], "movie_id" => star_wars["id"], "rating" => 3, "content" => "These are not the actors you're looking for.")
 Review.create("user_id" => jeff["id"], "movie_id" => apollo13["id"], "rating" => 5, "content" => "Great movie about teamwork, improvisation, and how to read error messages.")
 Review.create("user_id" => brian["id"], "movie_id" => apollo13["id"], "rating" => 1, "content" => "Spoiler alert: they survive.")
+Review.create("user_id" => grover["id"], "movie_id" => apollo13["id"], "rating" => 1, "content" => "Spoiler alert: they survive.")
 Review.create("user_id" => brian["id"], "movie_id" => lincoln["id"], "rating" => 4, "content" => "Spoiler alert: he gets shot.")
 Review.create("user_id" => jeff["id"], "movie_id" => lincoln["id"], "rating" => 3, "content" => "Should have focused more on the Gettysburg Address, the best speech ever written.")
+Review.create("user_id" => grover["id"], "movie_id" => lincoln["id"], "rating" => 3, "content" => "Should have focused more on the Gettysburg Address, the best speech ever written.")
 
 puts "There are now #{Director.count} directors, #{Movie.count} movies, and #{Actor.count} actors."
+
+puts "How many reviews are there for Star Wars?"
+puts "Which movies got at least one 5-star review?"
+puts "How many movies were made after the year 2001?"
